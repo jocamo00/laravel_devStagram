@@ -16,7 +16,12 @@ class RegisterController extends Controller
         // Validación
         // Método de laravel para hacer validaciones, le pasamos las reglas de validación.
         $this->validate($request, [
-            'name' => 'required | min:5',
+            'name'     => 'required | max:30',
+            'username' => 'required|unique:users|min:3|max:20',
+            'email'    => 'required|unique:users|email|max:60',
+            'password' => 'required'
+            // Tambien se pueden pasar las reglas como un array
+            //'name' => ['required', 'max:30'],
         ]);
     }
 }
