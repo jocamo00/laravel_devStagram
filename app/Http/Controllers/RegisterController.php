@@ -14,5 +14,9 @@ class RegisterController extends Controller
         // dd($request->get('username'));
 
         // Validación
+        // Método de laravel para hacer validaciones, le pasamos las reglas de validación.
+        $this->validate($request, [
+            'name' => 'required | min:5',
+        ]);
     }
 }

@@ -24,6 +24,10 @@
                         placeholder="Tu Nombre"
                         class="border p-3 w-full rounded-lg"
                     />
+
+                    @error('name')
+                        <p class="bg-red-500 text-while my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="mb-5">
                     <label for="username" class="mb-2 block uppercase text-gray-500 font-bold">
