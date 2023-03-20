@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        @stack('styles')
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         
         <title>DevStagram - @yield('titulo')</title>
@@ -25,7 +26,7 @@
                 </svg>
                 Crear
               </a>
-              <a class="font-bold text-gray-600 text-sm" href="#">
+              <a class="font-bold text-gray-600 text-sm" href="{{ route('posts.index', auth()->user()->username) }}">
                 Hola: <span class="font-normal"> {{ auth()->user()->username }}</span>
               </a>
 
